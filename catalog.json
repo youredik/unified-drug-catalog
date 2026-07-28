@@ -1,0 +1,803 @@
+{
+  "catalogVersion": 1,
+  "generatedAt": "2026-07-28T17:19:15.364Z",
+  "items": [
+    {
+      "attributes": {
+        "doseForm": {
+          "basic": "TABLET"
+        },
+        "inn": [],
+        "kind": "medicine",
+        "rxStatus": "otc",
+        "strength": {
+          "amount": {
+            "unit": "mg",
+            "value": 200
+          },
+          "kind": "quantity"
+        }
+      },
+      "brandCore": "Acmeflex",
+      "conflicts": [
+        {
+          "chosen": "Acmeflex 200 mg Tablets",
+          "chosenFrom": "chain-a",
+          "field": "tradeName",
+          "rejected": [
+            "chain-b: Acmeflex Tablets 200mg",
+            "chain-c: Acmeflex Film-coated Tabs"
+          ]
+        },
+        {
+          "chosen": "FILM_COATED_TABLET",
+          "chosenFrom": "chain-c",
+          "field": "doseForm.refinement",
+          "rejected": [
+            "chain-a: —",
+            "chain-b: —"
+          ]
+        }
+      ],
+      "country": "GB",
+      "gtin": {
+        "checkDigitValid": false,
+        "value": "02901000000171"
+      },
+      "id": "item:chain-a:A-1001",
+      "manufacturer": "Acme Pharma Healthcare",
+      "pack": {
+        "count": 24,
+        "unitOfPresentation": "Tablet"
+      },
+      "provenance": [
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "Acmeflex"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "Acmeflex"
+            },
+            {
+              "sourceId": "chain-c",
+              "value": "Acmeflex"
+            }
+          ],
+          "conflict": false,
+          "field": "brandCore",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1001",
+          "value": "Acmeflex",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "GB"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "GB"
+            },
+            {
+              "sourceId": "chain-c",
+              "value": "GB"
+            }
+          ],
+          "conflict": false,
+          "field": "country",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1001",
+          "value": "GB",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "TABLET"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "TABLET"
+            },
+            {
+              "sourceId": "chain-c",
+              "value": "TABLET"
+            }
+          ],
+          "conflict": false,
+          "field": "doseForm",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1001",
+          "value": "TABLET",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "—"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "—"
+            },
+            {
+              "sourceId": "chain-c",
+              "value": "FILM_COATED_TABLET"
+            }
+          ],
+          "conflict": true,
+          "field": "doseForm.refinement",
+          "sourceId": "chain-c",
+          "sourceRecordId": "chain-c:sku_30041",
+          "value": "FILM_COATED_TABLET",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "02901000000171"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "02901000000171"
+            },
+            {
+              "sourceId": "chain-c",
+              "value": "02901000000171"
+            }
+          ],
+          "conflict": false,
+          "field": "gtin",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1001",
+          "value": "02901000000171",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "Acme Pharma"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "Acme Pharma Ltd."
+            },
+            {
+              "sourceId": "chain-c",
+              "value": "Acme Pharma Healthcare"
+            }
+          ],
+          "conflict": false,
+          "field": "manufacturer",
+          "sourceId": "chain-c",
+          "sourceRecordId": "chain-c:sku_30041",
+          "value": "Acme Pharma Healthcare",
+          "wonBy": "verified_specificity"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "24 Tablet"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "24 Tablet"
+            },
+            {
+              "sourceId": "chain-c",
+              "value": "24 Tablet"
+            }
+          ],
+          "conflict": false,
+          "field": "pack",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1001",
+          "value": "24 Tablet",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "2023-01-15"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "2023-01-15"
+            },
+            {
+              "sourceId": "chain-c",
+              "value": "2023-01-15"
+            }
+          ],
+          "conflict": false,
+          "field": "registeredAt",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1001",
+          "value": "2023-01-15",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "otc"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "otc"
+            },
+            {
+              "sourceId": "chain-c",
+              "value": "otc"
+            }
+          ],
+          "conflict": false,
+          "field": "rxStatus",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1001",
+          "value": "otc",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "{\"kind\":\"quantity\",\"amount\":{\"value\":200,\"unit\":\"mg\"}}"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "{\"kind\":\"quantity\",\"amount\":{\"value\":200,\"unit\":\"mg\"}}"
+            },
+            {
+              "sourceId": "chain-c",
+              "value": "{\"kind\":\"quantity\",\"amount\":{\"value\":200,\"unit\":\"mg\"}}"
+            }
+          ],
+          "conflict": false,
+          "field": "strength",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1001",
+          "value": "{\"kind\":\"quantity\",\"amount\":{\"value\":200,\"unit\":\"mg\"}}",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "Acmeflex 200 mg Tablets"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "Acmeflex Tablets 200mg"
+            },
+            {
+              "sourceId": "chain-c",
+              "value": "Acmeflex Film-coated Tabs"
+            }
+          ],
+          "conflict": true,
+          "field": "tradeName",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1001",
+          "value": "Acmeflex 200 mg Tablets",
+          "wonBy": "source_trust_for_field"
+        }
+      ],
+      "qualityFlags": [
+        "country_synonym_resolved",
+        "dose_form_refined_unverified",
+        "gtin_check_digit_invalid",
+        "gtin_non_numeric_stripped",
+        "inn_absent",
+        "pack_unit_inferred_from_dose_form",
+        "strength_unit_assumed_from_manifest"
+      ],
+      "registeredAt": "2023-01-15",
+      "sources": [
+        {
+          "contractVersion": "2026-07-01",
+          "externalId": "A-1001",
+          "sourceId": "chain-a",
+          "sourceName": "Аптечная сеть A",
+          "sourceRecordId": "chain-a:A-1001"
+        },
+        {
+          "contractVersion": "2026-07-01",
+          "externalId": "NET2-88",
+          "sourceId": "chain-b",
+          "sourceName": "Аптечная сеть B",
+          "sourceRecordId": "chain-b:NET2-88"
+        },
+        {
+          "contractVersion": "2026-07-01",
+          "externalId": "sku_30041",
+          "sourceId": "chain-c",
+          "sourceName": "Аптечная сеть C",
+          "sourceRecordId": "chain-c:sku_30041"
+        }
+      ],
+      "tradeName": "Acmeflex 200 mg Tablets"
+    },
+    {
+      "attributes": {
+        "doseForm": {
+          "basic": "TABLET"
+        },
+        "inn": [],
+        "kind": "medicine",
+        "rxStatus": "otc",
+        "strength": {
+          "amount": {
+            "unit": "mg",
+            "value": 400
+          },
+          "kind": "quantity"
+        }
+      },
+      "brandCore": "Acmeflex",
+      "conflicts": [
+        {
+          "chosen": "Acmeflex 400 mg Tablets",
+          "chosenFrom": "chain-a",
+          "field": "tradeName",
+          "rejected": [
+            "chain-b: Acmeflex Tablets 400mg"
+          ]
+        }
+      ],
+      "country": "GB",
+      "gtin": {
+        "checkDigitValid": false,
+        "value": "02901000000249"
+      },
+      "id": "item:chain-a:A-1002",
+      "manufacturer": "Acme Pharma Ltd.",
+      "pack": {
+        "count": 12,
+        "unitOfPresentation": "Tablet"
+      },
+      "provenance": [
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "Acmeflex"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "Acmeflex"
+            }
+          ],
+          "conflict": false,
+          "field": "brandCore",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1002",
+          "value": "Acmeflex",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "GB"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "GB"
+            }
+          ],
+          "conflict": false,
+          "field": "country",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1002",
+          "value": "GB",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "TABLET"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "TABLET"
+            }
+          ],
+          "conflict": false,
+          "field": "doseForm",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1002",
+          "value": "TABLET",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "02901000000249"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "02901000000249"
+            }
+          ],
+          "conflict": false,
+          "field": "gtin",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1002",
+          "value": "02901000000249",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "Acme Pharma"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "Acme Pharma Ltd."
+            }
+          ],
+          "conflict": false,
+          "field": "manufacturer",
+          "sourceId": "chain-b",
+          "sourceRecordId": "chain-b:NET2-91",
+          "value": "Acme Pharma Ltd.",
+          "wonBy": "verified_specificity"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "12 Tablet"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "12 Tablet"
+            }
+          ],
+          "conflict": false,
+          "field": "pack",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1002",
+          "value": "12 Tablet",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "2023-01-15"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "2023-01-15"
+            }
+          ],
+          "conflict": false,
+          "field": "registeredAt",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1002",
+          "value": "2023-01-15",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "otc"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "otc"
+            }
+          ],
+          "conflict": false,
+          "field": "rxStatus",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1002",
+          "value": "otc",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "{\"kind\":\"quantity\",\"amount\":{\"value\":400,\"unit\":\"mg\"}}"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "{\"kind\":\"quantity\",\"amount\":{\"value\":400,\"unit\":\"mg\"}}"
+            }
+          ],
+          "conflict": false,
+          "field": "strength",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1002",
+          "value": "{\"kind\":\"quantity\",\"amount\":{\"value\":400,\"unit\":\"mg\"}}",
+          "wonBy": "source_trust_for_field"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-a",
+              "value": "Acmeflex 400 mg Tablets"
+            },
+            {
+              "sourceId": "chain-b",
+              "value": "Acmeflex Tablets 400mg"
+            }
+          ],
+          "conflict": true,
+          "field": "tradeName",
+          "sourceId": "chain-a",
+          "sourceRecordId": "chain-a:A-1002",
+          "value": "Acmeflex 400 mg Tablets",
+          "wonBy": "source_trust_for_field"
+        }
+      ],
+      "qualityFlags": [
+        "country_synonym_resolved",
+        "gtin_check_digit_invalid",
+        "gtin_non_numeric_stripped",
+        "inn_absent",
+        "pack_unit_inferred_from_dose_form",
+        "strength_unit_assumed_from_manifest"
+      ],
+      "registeredAt": "2023-01-15",
+      "sources": [
+        {
+          "contractVersion": "2026-07-01",
+          "externalId": "A-1002",
+          "sourceId": "chain-a",
+          "sourceName": "Аптечная сеть A",
+          "sourceRecordId": "chain-a:A-1002"
+        },
+        {
+          "contractVersion": "2026-07-01",
+          "externalId": "NET2-91",
+          "sourceId": "chain-b",
+          "sourceName": "Аптечная сеть B",
+          "sourceRecordId": "chain-b:NET2-91"
+        }
+      ],
+      "tradeName": "Acmeflex 400 mg Tablets"
+    },
+    {
+      "attributes": {
+        "doseForm": {
+          "basic": "TABLET"
+        },
+        "inn": [],
+        "kind": "medicine",
+        "rxStatus": "otc",
+        "strength": {
+          "amount": {
+            "unit": "mg",
+            "value": 200
+          },
+          "kind": "quantity"
+        }
+      },
+      "brandCore": "Northaid",
+      "conflicts": [],
+      "country": "GB",
+      "gtin": {
+        "checkDigitValid": false,
+        "value": "02901000000317"
+      },
+      "id": "item:chain-c:sku_30078",
+      "manufacturer": "Northwind Health",
+      "pack": {
+        "count": 24,
+        "unitOfPresentation": "Tablet"
+      },
+      "provenance": [
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-c",
+              "value": "Northaid"
+            }
+          ],
+          "conflict": false,
+          "field": "brandCore",
+          "sourceId": "chain-c",
+          "sourceRecordId": "chain-c:sku_30078",
+          "value": "Northaid",
+          "wonBy": "only_candidate"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-c",
+              "value": "GB"
+            }
+          ],
+          "conflict": false,
+          "field": "country",
+          "sourceId": "chain-c",
+          "sourceRecordId": "chain-c:sku_30078",
+          "value": "GB",
+          "wonBy": "only_candidate"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-c",
+              "value": "TABLET"
+            }
+          ],
+          "conflict": false,
+          "field": "doseForm",
+          "sourceId": "chain-c",
+          "sourceRecordId": "chain-c:sku_30078",
+          "value": "TABLET",
+          "wonBy": "only_candidate"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-c",
+              "value": "02901000000317"
+            }
+          ],
+          "conflict": false,
+          "field": "gtin",
+          "sourceId": "chain-c",
+          "sourceRecordId": "chain-c:sku_30078",
+          "value": "02901000000317",
+          "wonBy": "only_candidate"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-c",
+              "value": "Northwind Health"
+            }
+          ],
+          "conflict": false,
+          "field": "manufacturer",
+          "sourceId": "chain-c",
+          "sourceRecordId": "chain-c:sku_30078",
+          "value": "Northwind Health",
+          "wonBy": "only_candidate"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-c",
+              "value": "24 Tablet"
+            }
+          ],
+          "conflict": false,
+          "field": "pack",
+          "sourceId": "chain-c",
+          "sourceRecordId": "chain-c:sku_30078",
+          "value": "24 Tablet",
+          "wonBy": "only_candidate"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-c",
+              "value": "2023-03-22"
+            }
+          ],
+          "conflict": false,
+          "field": "registeredAt",
+          "sourceId": "chain-c",
+          "sourceRecordId": "chain-c:sku_30078",
+          "value": "2023-03-22",
+          "wonBy": "only_candidate"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-c",
+              "value": "otc"
+            }
+          ],
+          "conflict": false,
+          "field": "rxStatus",
+          "sourceId": "chain-c",
+          "sourceRecordId": "chain-c:sku_30078",
+          "value": "otc",
+          "wonBy": "only_candidate"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-c",
+              "value": "{\"kind\":\"quantity\",\"amount\":{\"value\":200,\"unit\":\"mg\"}}"
+            }
+          ],
+          "conflict": false,
+          "field": "strength",
+          "sourceId": "chain-c",
+          "sourceRecordId": "chain-c:sku_30078",
+          "value": "{\"kind\":\"quantity\",\"amount\":{\"value\":200,\"unit\":\"mg\"}}",
+          "wonBy": "only_candidate"
+        },
+        {
+          "competitors": [
+            {
+              "sourceId": "chain-c",
+              "value": "Northaid 200 mg Tabs"
+            }
+          ],
+          "conflict": false,
+          "field": "tradeName",
+          "sourceId": "chain-c",
+          "sourceRecordId": "chain-c:sku_30078",
+          "value": "Northaid 200 mg Tabs",
+          "wonBy": "only_candidate"
+        }
+      ],
+      "qualityFlags": [
+        "country_synonym_resolved",
+        "gtin_check_digit_invalid",
+        "inn_absent"
+      ],
+      "registeredAt": "2023-03-22",
+      "sources": [
+        {
+          "contractVersion": "2026-07-01",
+          "externalId": "sku_30078",
+          "sourceId": "chain-c",
+          "sourceName": "Аптечная сеть C",
+          "sourceRecordId": "chain-c:sku_30078"
+        }
+      ],
+      "tradeName": "Northaid 200 mg Tabs"
+    }
+  ],
+  "rulesetVersion": "v1",
+  "runId": "run-2026-07-28T17-19-15-364Z",
+  "sources": [
+    {
+      "contractVersion": "2026-07-01",
+      "dateFormat": "ISO_8601",
+      "format": "json",
+      "id": "chain-a",
+      "name": "Аптечная сеть A",
+      "records": 2
+    },
+    {
+      "contractVersion": "2026-07-01",
+      "dateFormat": "DD.MM.YYYY",
+      "format": "xml",
+      "id": "chain-b",
+      "name": "Аптечная сеть B",
+      "records": 2
+    },
+    {
+      "contractVersion": "2026-07-01",
+      "dateFormat": "YYYY/MM/DD",
+      "format": "json",
+      "id": "chain-c",
+      "name": "Аптечная сеть C",
+      "records": 2
+    }
+  ],
+  "stats": {
+    "items": 3,
+    "merged": 3,
+    "sourceRecords": 6,
+    "withConflicts": 2,
+    "withInvalidGtin": 3
+  }
+}

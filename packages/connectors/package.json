@@ -1,0 +1,12 @@
+{
+  "name": "@catalog/connectors",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@catalog/domain": "workspace:*",
+    "@catalog/normalize": "workspace:*",
+    "fast-xml-parser": "^5.10.1"
+  }
+}

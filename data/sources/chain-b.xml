@@ -1,0 +1,26 @@
+<catalogue>
+  <item>
+    <code>NET2-88</code>
+    <name>Acmeflex Tablets 200mg</name>
+    <vendor>Acme Pharma Ltd.</vendor>
+    <ean>2901-0000-0017-1</ean>
+    <strength>200 mg</strength>
+    <packaging>24 tablets</packaging>
+    <form>tablets</form>
+    <prescription>false</prescription>
+    <country>United Kingdom</country>
+    <registered>15.01.2023</registered>
+  </item>
+  <item>
+    <code>NET2-91</code>
+    <name>Acmeflex Tablets 400mg</name>
+    <vendor>Acme Pharma Ltd.</vendor>
+    <ean>2901-0000-0024-9</ean>
+    <strength>400 mg</strength>
+    <packaging>12 tablets</packaging>
+    <form>tablets</form>
+    <prescription>false</prescription>
+    <country>United Kingdom</country>
+    <registered>15.01.2023</registered>
+  </item>
+</catalogue>

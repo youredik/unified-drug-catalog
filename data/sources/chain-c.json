@@ -1,0 +1,30 @@
+{
+  "products": [
+    {
+      "uid": "sku_30041",
+      "attributes": {
+        "name": "Acmeflex Film-coated Tabs",
+        "producer": { "title": "Acme Pharma Healthcare" },
+        "dose": { "amount": 200, "units": "mg" },
+        "codes": { "ean14": "2901000000171" },
+        "pack": { "units": 24, "kind": "tabs" },
+        "rx": "no",
+        "market": "UK",
+        "reg": "2023/01/15"
+      }
+    },
+    {
+      "uid": "sku_30078",
+      "attributes": {
+        "name": "Northaid 200 mg Tabs",
+        "producer": { "title": "Northwind Health" },
+        "dose": { "amount": 200, "units": "mg" },
+        "codes": { "ean14": "2901000000317" },
+        "pack": { "units": 24, "kind": "tabs" },
+        "rx": "no",
+        "market": "UK",
+        "reg": "2023/03/22"
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@catalog/cli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@catalog/domain": "workspace:*",
+    "@catalog/normalize": "workspace:*",
+    "@catalog/connectors": "workspace:*",
+    "@catalog/match": "workspace:*",
+    "@catalog/pipeline": "workspace:*",
+    "@catalog/adjudicator": "workspace:*",
+    "@catalog/db": "workspace:*"
+  }
+}

@@ -1,0 +1,117 @@
+name: CI
+
+# Все внешние действия закреплены по SHA коммита, а не по тегу: тег
+# перевешивается владельцем репозитория, и подмена содержимого под тем же
+# именем — реальный вектор атаки на цепочку поставок CI.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '24'
+
+jobs:
+  # Быстрые гейты: падают за секунды и отсекают большинство ошибок до того,
+  # как запустится что-то тяжёлое.
+  gates:
+    name: Типы, линтер, архитектура
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Типы
+        run: pnpm typecheck
+
+      - name: Линтер
+        run: pnpm lint
+
+      - name: Правило зависимостей
+        run: pnpm arch
+
+  unit:
+    name: Тесты
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Юнит, property, golden, безопасность
+        run: pnpm test
+
+      # Замер вклада языковой модели. Ключа в CI нет и не должно быть:
+      # команда обязана честно сообщить, что замер не проводился, а не упасть.
+      - name: Замер арбитра без ключа
+        run: pnpm eval
+
+      - name: Выгрузка каталога воспроизводима
+        run: |
+          pnpm ingest
+          pnpm export --out=/tmp/catalog-ci.json
+          # Тот же прогон, выгруженный дважды, обязан дать те же байты.
+          pnpm export --out=/tmp/catalog-ci-2.json
+          diff -u /tmp/catalog-ci.json /tmp/catalog-ci-2.json
+          echo "выгрузка детерминирована"
+
+  integration:
+    name: Интеграция с PostgreSQL
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # Testcontainers поднимает базу сам — сервис-контейнер здесь не нужен,
+      # и тест остаётся воспроизводимым локально ровно той же командой.
+      - name: Живой PostgreSQL через Testcontainers
+        run: pnpm test:integration
+
+  supply-chain:
+    name: Цепочка поставок
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Известные уязвимости
+        run: pnpm audit --audit-level=high
+
+      - name: Локфайл соответствует манифестам
+        run: git diff --exit-code pnpm-lock.yaml

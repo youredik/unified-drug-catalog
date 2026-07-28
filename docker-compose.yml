@@ -1,0 +1,31 @@
+name: catalog
+
+services:
+  postgres:
+    # PostgreSQL 18: асинхронный ввод-вывод, встроенный uuidv7(), skip scan
+    # по составным индексам — последнее прямо полезно блокировке кандидатов.
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_USER: catalog
+      POSTGRES_PASSWORD: catalog
+      POSTGRES_DB: catalog
+      # Локальная разработка: пароль не в проде, а инициализация без
+      # trust-аутентификации, чтобы поведение совпадало с боевым.
+      POSTGRES_INITDB_ARGS: '--auth-host=scram-sha-256'
+    ports:
+      - '55432:5432'
+    volumes:
+      # У образа 18 том монтируется в /var/lib/postgresql, а НЕ в .../data:
+      # данные лежат в подкаталоге, чтобы `pg_upgrade --link` не упирался
+      # в границу точки монтирования. Старый путь роняет контейнер на старте.
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      # Воркеру нет смысла стартовать раньше, чем база готова принимать
+      # соединения: иначе первая же джоба падает на ровном месте.
+      test: ['CMD-SHELL', 'pg_isready -U catalog -d catalog']
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  pgdata:

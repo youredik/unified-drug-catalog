@@ -1,0 +1,26 @@
+[
+  {
+    "sku": "A-1001",
+    "title": "Acmeflex 200 mg Tablets",
+    "maker": "Acme Pharma",
+    "barcode": "2901000000171",
+    "strength_mg": 200,
+    "qty": 24,
+    "form": "tablet",
+    "is_rx": false,
+    "country": "GB",
+    "reg_date": "2023-01-15"
+  },
+  {
+    "sku": "A-1002",
+    "title": "Acmeflex 400 mg Tablets",
+    "maker": "Acme Pharma",
+    "barcode": "2901000000249",
+    "strength_mg": 400,
+    "qty": 12,
+    "form": "tablet",
+    "is_rx": false,
+    "country": "GB",
+    "reg_date": "2023-01-15"
+  }
+]

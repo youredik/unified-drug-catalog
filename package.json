@@ -1,0 +1,50 @@
+{
+  "name": "unified-drug-catalog",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.34.2",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "ingest": "node apps/cli/src/main.ts ingest",
+    "export": "node apps/cli/src/main.ts export",
+    "report": "node apps/cli/src/main.ts report",
+    "explain": "node apps/cli/src/main.ts explain",
+    "catalog:diff": "node apps/cli/src/main.ts diff",
+    "eval": "node apps/cli/src/main.ts eval",
+    "eval:record": "node apps/cli/src/main.ts eval:record",
+    "worker": "node apps/cli/src/main.ts worker",
+    "db:up": "docker compose up -d --wait",
+    "db:down": "docker compose down",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "node apps/cli/src/main.ts migrate",
+    "test": "vitest run",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "arch": "depcruise packages apps --config .dependency-cruiser.cjs",
+    "audit": "pnpm audit --audit-level=high"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@testcontainers/postgresql": "^12.0.4",
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.20.0",
+    "dependency-cruiser": "^17.0.0",
+    "drizzle-kit": "^0.31.10",
+    "eslint": "^10.7.0",
+    "fast-check": "^4.9.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.65.0",
+    "vitest": "^4.1.10"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.45.2",
+    "pg": "^8.22.0",
+    "pg-boss": "^12.26.1"
+  }
+}

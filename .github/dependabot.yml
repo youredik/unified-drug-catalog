@@ -1,0 +1,24 @@
+version: 2
+
+# Обновления приходят пачкой раз в неделю, а не по одному PR на пакет:
+# двадцать открытых PR никто не смотрит, и это хуже, чем не обновляться.
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      dev-dependencies:
+        dependency-type: development
+        update-types: [minor, patch]
+      production-dependencies:
+        dependency-type: production
+        update-types: [minor, patch]
+
+  # Экшены закреплены по SHA — руками их не обновить, для этого Dependabot
+  # и нужен: он поднимает SHA и оставляет тег в комментарии.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
