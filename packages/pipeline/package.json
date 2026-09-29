@@ -10,7 +10,7 @@
     "@catalog/match": "workspace:*",
     "@catalog/connectors": "workspace:*",
     "@catalog/db": "workspace:*",
-    "drizzle-orm": "^0.45.2",
+    "drizzle-orm": "^0.45.3",
     "pg-boss": "^12.26.1"
   }
 }
