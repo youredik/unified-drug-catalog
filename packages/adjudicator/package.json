@@ -8,6 +8,6 @@
     "@anthropic-ai/sdk": "^0.112.4",
     "@catalog/domain": "workspace:*",
     "@catalog/match": "workspace:*",
-    "zod": "^4.4.3"
+    "zod": "^4.6.7"
   }
 }
